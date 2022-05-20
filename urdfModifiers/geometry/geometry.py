@@ -17,9 +17,16 @@ class Geometry(Enum):
 
 class Side(Enum):
     """The possible sides of a box geometry"""
-    WIDTH = auto()
-    HEIGHT = auto()
-    DEPTH = auto()
+    X = auto()
+    Y = auto()
+    Z = auto()
+
+class JointType():
+    """The different types of joint"""
+    PRISMATIC = 'prismatic'
+    REVOLUTE = 'revolute'
+    FIXED = 'fixed'
+    CONTINUOUS = 'continuous'
 
 class Limb(Enum, metaclass=ContainsBasedOnKeyMeta):
     """The possible limbs of the robot"""
@@ -38,12 +45,3 @@ class RobotElement(Enum):
     LINK = auto()
     JOINT = auto()
 
-class Modification():
-    """Available modifications type"""
-    DENSITY = "density"
-    DIMENSION = "dimension"
-    RADIUS = "radius"
-    MASS = "mass"
-    ABSOLUTE = True
-    MULTIPLIER = False 
-    SCALE= "_scale"
