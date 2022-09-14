@@ -241,7 +241,7 @@ class LinkModifier(modifier.Modifier):
         if (self.element.inertial is not None):
             inertia = self.element.inertial.inertia
             new_inertia = self.calculate_inertia()
-            new_inertia[new_inertia < 1e-7] = 1e-7
+            new_inertia[new_inertia < 1e-9] = 1e-9
             for i in range(3):
                 for j in range(3):
                     if (i == j):
